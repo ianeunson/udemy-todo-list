@@ -4,20 +4,20 @@ let todos = [];
 
 while(input.toLowerCase() !== "quit") {
     
-    if (input === "new"){
+    if (input.toLowerCase() === "new"){
         let newTodo = prompt("Add a Todo");
         todos.push(newTodo);
         
-    } else if(input === 'list') { //if user enters "list"
+    } else if(input.toLowerCase() === 'list') { //if user enters "list"
         for (let task in todos){
-            console.log(task);
+            console.log(`${task}: ${todos[task]}`);
         }
-    } else if(input === 'delete') { //if user enters "delete"
+    } else if(input.toLowerCase() === 'delete') { //if user enters "delete"
         let indexToDelete = prompt("Enter todo number you wish to delete");
-        todos.splice(indexToDelete);
+        todos.splice(indexToDelete, 1);
     } else { //if user enters something that isn't on the list
-    input = prompt("Please enter a valid command from the list") 
+    alert("Please enter a valid command from the list") 
     }
     console.log(todos);
-    input = prompt("What would you like to do?");
+    input = prompt("What would you like to do?"); 
 }
